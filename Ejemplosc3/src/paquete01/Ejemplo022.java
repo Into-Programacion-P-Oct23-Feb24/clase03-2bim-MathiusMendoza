@@ -18,23 +18,23 @@ public class Ejemplo022 {
      */
     public static void main(String[] args) {
         // Creación de arreglo bidimensionales
-        Scanner entrada = new Scanner(System.in);
-        int valor;
+
         // forma 1
+        Scanner entrada = new Scanner(System.in);
         int[][] arreglo1 = new int[3][4]; //
-        System.out.printf("Uso de la opción length: %d\n", arreglo1.length);
+        // System.out.printf("Uso de la opción length: %d\n", arreglo1.length);
 
-        System.out.printf("Valor en la posición [0][2]\n", arreglo1[0][2]);
-
+        // System.out.printf("Valor en la posición [0][2]\n", arreglo1[0][2]);
         arreglo1[0][2] = 1000;
         for (int fila = 0; fila < arreglo1.length; fila++) {
             for (int col = 0; col < arreglo1[fila].length; col++) {
-                System.out.printf("Ingrese un numero para posicion [%d][%d]"
-                        ,fila,col);
-                valor = entrada.nextInt();
-                arreglo1[fila][col] = valor;
-                
-
+                System.out.println("ingrese un numero");
+                int valor = entrada.nextInt();
+                if ((valor % 2 == 0) && (valor >= 10)) {
+                    arreglo1[fila][col] = 0;
+                } else {
+                    arreglo1[fila][col] = valor;
+                }
             }
         }
 
